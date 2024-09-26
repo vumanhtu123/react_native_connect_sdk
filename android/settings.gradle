@@ -1,0 +1,9 @@
+pluginManagement { includeBuild("../node_modules/@react-native/gradle-plugin") }
+plugins { id("com.facebook.react.settings") }
+extensions.configure(com.facebook.react.ReactSettingsExtension){ ex -> ex.autolinkLibrariesFromCommand() }
+rootProject.name = 'app_test_sdk'
+include ':app'
+includeBuild('../node_modules/@react-native/gradle-plugin')
+include ':app-debug.aar'
+project(':app-debug.aar').projectDir = new File(rootProject.projectDir, 'app-debug.aar')
+
